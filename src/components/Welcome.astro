@@ -1,0 +1,366 @@
+---
+import youBewtyLogo from '../assets/you-bewty.svg';
+import whiteArch from '../assets/white-arch.svg';
+import backgroundSvg from '../assets/background.svg';
+import backgroundCircles from '../assets/background-circles-1.svg';
+---
+
+<main>
+	<!-- Header Section with Logo -->
+	<section class="section text-center hero-section">
+		<div class="background-wrapper">
+			<img src={backgroundSvg.src} alt="" class="background-main" />
+			<div class="logo-overlay">
+				<img src={youBewtyLogo.src} alt="You Bewty" class="main-logo" />
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Description & Booking Section -->
+	<section class="section text-center services-section">
+		<div class="background-wrapper">
+			<img src={backgroundCircles.src} alt="" class="background-circles" />
+		</div>
+		
+		<!-- Content Overlay -->
+		<div class="content-overlay">
+			<!-- Text Content Row -->
+			<div class="text-content-row">
+				<div class="text-content">
+					<p class="services-description">
+						BROWS & LASHES, FEMALE & MALE WAXING AND IPL HAIR REDUCTION, SKIN TREATMENTS, AND SPRAY TANS IN TYABB, VICTORIA
+					</p>
+					
+					<p class="booking-text">
+						FOR BOOKINGS, CALL <a href="tel:+61499906968" class="phone-link">0499 906 968</a> OR USE THE BOOKING FORM BELOW
+					</p>
+				</div>
+			</div>
+			
+			<!-- Arch and Booking Widget Row -->
+			<div class="booking-row">
+				<div class="arch-container">
+					<img src={whiteArch.src} alt="" class="arch-image" />
+				</div>
+				<div class="booking-widget">
+					<iframe 
+						src="https://bookings.gettimely.com/youbewty/bb/book"
+						width="480"
+						height="650"
+						title="Book Online"
+						loading="lazy">
+					</iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Social Media Section -->
+	<section class="section text-center social-section">
+		<div class="container">
+			<p class="follow-text">FOLLOW US ON INSTAGRAM</p>
+			<a href="https://www.instagram.com/you_bewty/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c3.252,0.148,4.771,1.691,4.919,4.919c0.058,1.265,0.069,1.645,0.069,4.849c0,3.205-0.012,3.584-0.069,4.849c-0.149,3.225-1.664,4.771-4.919,4.919c-1.266,0.058-1.644,0.07-4.85,0.07c-3.204,0-3.584-0.012-4.849-0.07c-3.26-0.149-4.771-1.699-4.919-4.92c-0.058-1.265-0.07-1.644-0.07-4.849c0-3.204,0.013-3.583,0.07-4.849c0.149-3.227,1.664-4.771,4.919-4.919c1.266-0.057,1.645-0.069,4.849-0.069zm0-2.163c-3.259,0-3.667,0.014-4.947,0.072c-4.358,0.2-6.78,2.618-6.98,6.98c-0.059,1.281-0.073,1.689-0.073,4.948c0,3.259,0.014,3.668,0.072,4.948c0.2,4.358,2.618,6.78,6.98,6.98c1.281,0.058,1.689,0.072,4.948,0.072c3.259,0,3.668-0.014,4.948-0.072c4.354-0.2,6.782-2.618,6.979-6.98c0.059-1.28,0.073-1.689,0.073-4.948c0-3.259-0.014-3.667-0.072-4.947c-0.196-4.354-2.617-6.78-6.979-6.98c-1.281-0.059-1.69-0.073-4.949-0.073zm0,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.163,6.162,6.163s6.162-2.759,6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0,10.162c-2.209,0-4-1.79-4-4c0-2.209,1.791-4,4-4s4,1.791,4,4c0,2.21-1.791,4-4,4zm6.406-11.845c-0.796,0-1.441,0.645-1.441,1.44s0.645,1.44,1.441,1.44c0.795,0,1.439-0.645,1.439-1.44s-0.644-1.44-1.439-1.44z"/>
+				</svg>
+				@you_bewty
+			</a>
+		</div>
+	</section>
+</main>
+
+<style>
+	.hero-section {
+		position: relative;
+		min-height: 100vh;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	.background-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.background-main {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+	}
+
+	.logo-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.main-logo {
+		max-width: 600px;
+		width: 90%;
+		height: auto;
+		z-index: 10;
+	}
+
+	.background-circles {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	.services-section {
+		background-color: #313f29 !important;
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.content-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 20px;
+	}
+
+	.text-content-row {
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		width: 100%;
+		max-width: 900px;
+		z-index: 10;
+	}
+
+	.text-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.services-description {
+		font-size: 1.2em;
+		font-weight: 600;
+		letter-spacing: 4px;
+		margin-bottom: 1.5em;
+		text-transform: uppercase;
+		color: #ff8c00;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		line-height: 1.4;
+	}
+
+	.booking-text {
+		font-size: 1.1em;
+		font-weight: 500;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		color: #ff8c00;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	.phone-link {
+		color: #ff8c00;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.phone-link:hover {
+		text-decoration: underline;
+	}
+
+	.booking-row {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+	}
+
+	.arch-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+
+	.arch-image {
+		width: 600px;
+		height: auto;
+		display: block;
+	}
+
+	.booking-widget {
+		position: relative;
+		z-index: 10;
+		border: none;
+		background: transparent;
+	}
+
+	.booking-widget iframe {
+		width: 460px;
+		height: 650px;
+		border: none;
+		background: white;
+		border-radius: 20px 20px 0 0;
+	}
+
+	.social-section {
+		padding: 3em 0;
+		background-color: #c1c1ae;
+	}
+
+	.follow-text {
+		font-size: 1.1em;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		margin-bottom: 1.5em;
+		text-transform: uppercase;
+		color: #ff5b00 !important;
+	}
+
+	.instagram-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		font-size: 1.1em;
+		font-weight: 600;
+		color: #ff5b00 !important;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		padding: 0.8em 1.5em;
+		border-radius: 25px;
+		background: rgba(255, 91, 0, 0.1);
+	}
+
+	.instagram-link:hover {
+		background: rgba(255, 91, 0, 0.2);
+		transform: translateY(-2px);
+		text-decoration: none;
+	}
+
+	.instagram-link svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 980px) {
+		.main-logo {
+			margin: 1.5em 0;
+		}
+		
+		.services-description {
+			font-size: 1.1em;
+		}
+		
+		.booking-text {
+			font-size: 1em;
+		}
+		
+		.arch-image {
+			width: 500px;
+		}
+		
+		.booking-widget iframe {
+			width: 400px;
+			height: 600px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.main-logo {
+			margin: 1em 0;
+			max-width: 280px;
+		}
+		
+		.hero-section {
+			min-height: 70vh;
+		}
+		
+		.background-wrapper {
+			height: 70vh;
+		}
+		
+		.main-logo {
+			max-width: 350px;
+			width: 85%;
+		}
+		
+		.services-section {
+			height: auto;
+			min-height: 100vh;
+		}
+		
+		.text-content-row {
+			top: 15%;
+		}
+		
+		.text-content {
+			padding: 0 20px;
+		}
+		
+		.services-description {
+			font-size: 1em;
+			margin-bottom: 1.5em;
+		}
+		
+		.booking-text {
+			font-size: 0.9em;
+		}
+		
+		.booking-row {
+			top: 60%;
+		}
+		
+		.arch-image {
+			width: 400px;
+		}
+		
+		.booking-widget iframe {
+			width: 320px;
+			height: 550px;
+		}
+		
+		.instagram-link {
+			font-size: 1em;
+			padding: 0.7em 1.2em;
+		}
+	}
+</style>
