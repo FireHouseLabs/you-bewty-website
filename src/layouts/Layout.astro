@@ -1,10 +1,22 @@
 ---
+import { SEO } from "astro-seo";
+import insideImage from "../assets/inside.png";
+
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
+	canonical?: string;
+	keywords?: string;
 }
 
-const { title = "You Bewty - Brows & Lashes, Waxing, IPL, Skin Treatments & Spray Tans in Tyabb, Victoria", description = "Professional beauty services in Tyabb, Victoria. Specializing in brows & lashes, female & male waxing, IPL hair reduction, skin treatments, and spray tans. Book online or call 0499 906 968." } = Astro.props;
+const { 
+	title = "You Bewty - Brows & Lashes, Waxing, IPL, Skin Treatments & Spray Tans in Tyabb, Victoria", 
+	description = "Professional beauty services in Tyabb, Victoria. Specializing in brows & lashes, female & male waxing, IPL hair reduction, skin treatments, and spray tans. Book online or call 0499 906 968.",
+	image,
+	canonical,
+	keywords = "beauty salon, eyebrow threading, eyelash extensions, waxing, IPL hair removal, skin treatments, spray tan, beauty services, Tyabb, Mornington Peninsula, Victoria, brow tinting, lash lift, facial treatments, hair removal, cosmetic treatments"
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -12,21 +24,41 @@ const { title = "You Bewty - Brows & Lashes, Waxing, IPL, Skin Treatments & Spra
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
 		
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:locale" content="en_AU" />
+		<!-- Favicons -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 		
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary" />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
+		<SEO
+			title={title}
+			description={description}
+			canonical={canonical}
+			openGraph={{
+				basic: {
+					title: title,
+					type: "website",
+					image: image || insideImage.src
+				},
+				optional: {
+					description: description,
+					locale: "en_AU"
+				}
+			}}
+			twitter={{
+				card: "summary_large_image",
+				title: title,
+				description: description,
+				image: image || insideImage.src
+			}}
+		/>
+		
+		<!-- Keywords -->
+		<meta name="keywords" content={keywords} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
