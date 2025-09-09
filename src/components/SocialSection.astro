@@ -11,6 +11,12 @@
 			</svg>
 			@you_bewty
 		</a>
+		
+		<p class="address">
+			<a href="https://maps.google.com/?q=1553+Frankston+-+Flinders+Road,+Tyabb" target="_blank" rel="noopener noreferrer" class="address-link">
+				1553 Frankston - Flinders Road, Tyabb
+			</a>
+		</p>
 	</div>
 </section>
 
@@ -62,10 +68,32 @@
 		height: 24px;
 	}
 
+	.address {
+		margin-top: 2em;
+		margin-bottom: 0;
+	}
+
+	.address-link {
+		color: #ff5b00;
+		font-size: 1em;
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.address-link:hover {
+		text-decoration: underline;
+		color: #ff4500;
+	}
+
 	@media (max-width: 767px) {
 		.instagram-link {
 			font-size: 1em;
 			padding: 0.7em 1.2em;
+		}
+
+		.address-link {
+			font-size: 0.9em;
 		}
 	}
 </style>
