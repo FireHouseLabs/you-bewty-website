@@ -1,0 +1,77 @@
+---
+import youBewtyLogo from '../assets/you-bewty.svg';
+import backgroundSvg from '../assets/background.svg';
+---
+
+<section class="hero-section">
+	<div class="background-wrapper">
+		<img src={backgroundSvg.src} alt="" class="background-main" />
+		<div class="logo-overlay">
+			<img src={youBewtyLogo.src} alt="You Bewty" class="main-logo" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero-section {
+		position: relative;
+		min-height: 100vh;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	.background-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.background-main {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+	}
+
+	.logo-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.main-logo {
+		max-width: 600px;
+		width: 90%;
+		height: auto;
+		z-index: 10;
+	}
+
+	@media (max-width: 767px) {
+		.main-logo {
+			margin: 1em 0;
+			max-width: 350px;
+			width: 85%;
+		}
+		
+		.hero-section {
+			min-height: 70vh;
+		}
+		
+		.background-wrapper {
+			height: 70vh;
+		}
+	}
+</style>

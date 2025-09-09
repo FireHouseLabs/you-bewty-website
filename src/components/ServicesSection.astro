@@ -1,0 +1,209 @@
+---
+import whiteArch from '../assets/white-arch.svg';
+import backgroundCircles from '../assets/background-circles-1.svg';
+---
+
+<section class="services-section">
+	<div class="background-wrapper">
+		<img src={backgroundCircles.src} alt="" class="background-circles" />
+	</div>
+	
+	<!-- Row 1: Text Content (matching original et_pb_row_1) -->
+	<div class="text-row">
+		<div class="text-content">
+			<p class="services-description">
+				BROWS & LASHES, FEMALE & MALE WAXING AND IPL HAIR REDUCTION, SKIN TREATMENTS, AND SPRAY TANS IN TYABB, VICTORIA
+			</p>
+			
+			<p class="booking-text">
+				FOR BOOKINGS, CALL <a href="tel:+61499906968" class="phone-link">0499 906 968</a> OR USE THE BOOKING FORM BELOW
+			</p>
+		</div>
+	</div>
+	
+	<!-- Row 2: Arch and Booking Widget (matching original et_pb_row_2) -->
+	<div class="booking-row">
+		<div class="arch-image-container">
+			<img src={whiteArch.src} alt="" class="arch-image" />
+		</div>
+		<div class="booking-widget-container">
+			<iframe 
+				src="https://bookings.gettimely.com/youbewty/bb/book"
+				width="480"
+				height="650"
+				title="Book Online"
+				loading="lazy"
+				class="booking-iframe">
+			</iframe>
+		</div>
+	</div>
+</section>
+
+<style>
+	.services-section {
+		background-color: #313f29;
+		position: relative;
+		padding: 4% 0;
+	}
+
+	.background-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.background-circles {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	/* Row 1: Text Content */
+	.text-row {
+		width: 80%;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 2% 0;
+		position: relative;
+		z-index: 10;
+		text-align: center;
+	}
+
+	.text-content {
+		max-width: 700px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.services-description {
+		font-size: 1.2em;
+		font-weight: 600;
+		letter-spacing: 4px;
+		margin-bottom: 1.5em;
+		text-transform: uppercase;
+		color: #ff8c00;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		line-height: 1.4;
+	}
+
+	.booking-text {
+		font-size: 1.1em;
+		font-weight: 500;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		color: #ff8c00;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	.phone-link {
+		color: #ff8c00;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.phone-link:hover {
+		text-decoration: underline;
+	}
+
+	/* Row 2: Booking Section */
+	.booking-row {
+		width: 80%;
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 2% 0;
+		position: relative;
+		z-index: 10;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.arch-image-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+
+	.arch-image {
+		width: 600px;
+		height: auto;
+		display: block;
+	}
+
+	.booking-widget-container {
+		position: relative;
+		z-index: 10;
+	}
+
+	.booking-iframe {
+		width: 480px;
+		height: 650px;
+		border: none;
+		background: white;
+		border-radius: 15px 15px 0 0;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 980px) {
+		.services-description {
+			font-size: 1.1em;
+		}
+		
+		.booking-text {
+			font-size: 1em;
+		}
+		
+		.arch-image {
+			width: 500px;
+		}
+		
+		.booking-iframe {
+			width: 400px;
+			height: 600px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.services-section {
+			padding: 50px 0;
+		}
+		
+		.text-row {
+			width: 90%;
+		}
+		
+		.booking-row {
+			width: 90%;
+		}
+		
+		.services-description {
+			font-size: 1em;
+			margin-bottom: 1.5em;
+		}
+		
+		.booking-text {
+			font-size: 0.9em;
+		}
+		
+		.arch-image {
+			width: 400px;
+		}
+		
+		.booking-iframe {
+			width: 320px;
+			height: 550px;
+		}
+	}
+</style>
